@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restapp'
+    'restapp',
+    'rest_framework'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,6 +87,13 @@ DATABASES = {
     }
 }
 
+
+
+AUTHENTICATION_BACKENDS = (
+
+    'oliver.auth.RestAuthBaackend',
+
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
