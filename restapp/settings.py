@@ -38,7 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restapp',
-    'rest_framework'
+    'rest_framework',
+    'oliver'
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,11 +91,7 @@ DATABASES = {
 
 
 
-AUTHENTICATION_BACKENDS = (
 
-    'oliver.auth.RestAuthBaackend',
-
-)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -113,3 +111,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}

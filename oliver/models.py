@@ -1,23 +1,30 @@
 import hashlib
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
+from restapp import settings
+
 
 class Account(models.Model):
-	accountid=models.IntegerField()
-	name=models.ChardField(max_length=200)
-	email=models.EmailField()
-	password=models.CharField(max_length=200)
+    SEXS = (
+        ('m', 'Man'),
+        ('w', 'Woman'),
+
+    )
+
+    id=models.AutoField(primary_key=True,auto_created=True)
+
+    accountName=models.CharField(unique=True,max_length=200,null=True)
+    password=models.CharField(max_length=200)
+    nick=models.CharField(max_length=100)
+    sex=models.CharField(max_length=10,choices=SEXS)
 
 
 
 
 
-    def check_password(self, password):
-        if self.password(password) == self.password:
-            return True
-        return False
 
-    class Meta:
-        db_table = "restapp"
-	
+
+
+
