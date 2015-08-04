@@ -1,0 +1,14 @@
+1.register api:
+    http://nixuchen.com:1111/rest/register?account=oliver&password=111111
+    result sample:
+    (1) success:
+    {
+        "status": 0,
+        "msg": "register success!"
+    }
+
+    (2)error:
+    {
+        "status": 1,
+        "msg": "user exits!"
+    }
