@@ -7,6 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('oliver', '0002_delete_account'),
     ]
 
     operations = [

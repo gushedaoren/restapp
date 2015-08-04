@@ -14,7 +14,7 @@ class Account(models.Model):
     )
 
     id=models.AutoField(primary_key=True,auto_created=True)
-
+    created = models.DateTimeField(auto_now_add=True)
     accountName=models.CharField(unique=True,max_length=200,null=True)
     password=models.CharField(max_length=200)
     nick=models.CharField(max_length=100)
