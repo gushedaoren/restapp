@@ -23,7 +23,7 @@ class LoginView(APIView):
           a=Account.objects.get(accountName=account)
           if a.password!=password:
               statusCode=1
-              msg="acount and password do not match!"
+              msg="account and password do not match!"
 
         except Account.DoesNotExit:
           statusCode=2
