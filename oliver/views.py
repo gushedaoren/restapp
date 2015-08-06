@@ -1,12 +1,11 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render
 
 # Create your views here.
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
-import logging
 from oliver.models import Account
+from oliver.response_tool import ResponseTool
 
 
 class LoginView(APIView):
@@ -20,12 +19,19 @@ class LoginView(APIView):
         statusCode=0
         msg="login success!"
 
+        try:
+          a=Account.objects.get(accountName=account)
+          if a.password!=password:
+              statusCode=1
+              msg="acount and password do not match!"
+
+        except Account.DoesNotExit:
+          statusCode=2
+          msg="user not exits"
 
 
-        content = {
-            'status': statusCode,
-            'msg': msg,
-        }
+
+        content=ResponseTool.getResultContent(statusCode,msg)
         return Response(content)
 
 
@@ -59,13 +65,13 @@ class RegisterView(APIView):
 
 
 
+        content=ResponseTool.getResultContent(statusCode,msg)
 
 
 
 
-
-        content = {
-            'status': statusCode,
-            'msg': msg,
-        }
+        # content = {
+        #     'status': statusCode,
+        #     'msg': msg,
+        # }
         return Response(content)
