@@ -41,6 +41,7 @@ class RegisterView(APIView):
 
     def get(self, request, format=None):
 
+        data=request.GET['data']
         account=request.GET['account']
         password=request.GET['password']
         statusCode=0

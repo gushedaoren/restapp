@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'restapp',
     'rest_framework',
     'oliver',
+    'bootstrap',
 
 
 )
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'restapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +121,4 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+
