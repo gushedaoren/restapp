@@ -25,5 +25,6 @@ urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
 
                url(r'^', include('oliver.urls')),
+               url(r'^', include('chongming.urls')),
                       )
 urlpatterns += staticfiles_urlpatterns()
