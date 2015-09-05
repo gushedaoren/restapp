@@ -16,15 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-
-
-
+from chongming import views
 
 urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
 
                url(r'^', include('oliver.urls')),
                url(r'^', include('chongming.urls')),
+               url(r'$', views.index),
                       )
 urlpatterns += staticfiles_urlpatterns()
