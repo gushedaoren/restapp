@@ -2,9 +2,6 @@ import os
 import sys
 
 sys.path.append('/var/restapp/')
-
+from django.core.wsgi import get_wsgi_application
 os.environ['DJANGO_SETTINGS_MODULE'] = 'restapp.settings'
-
-import django.core.handlers.wsgi
-
-application = django.core.handlers.wsgi.WSGIHandler()
+application = get_wsgi_application()
