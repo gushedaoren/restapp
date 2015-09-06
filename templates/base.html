@@ -36,49 +36,62 @@ body { font-size: 14px;}
 .pgwMenuCustom .pm-viewMore span.icon, .pgwMenuCustom .pm-viewMore span.white { border-color: #fff transparent; border-style: solid; border-width: 8px 6px 0; margin-left: 3px; display: inline-block }
 .pgwMenuCustom .pm-viewMore span.black { border-color: #000 transparent; border-style: solid; border-width: 8px 6px 0; margin-left: 3px; display: inline-block }
 </style>
+
+
+
 </head>
 
 <body>
 
 <div id="div_nav">
 <ul class="pgwMenuCustom">
-	<li><a class="selected" href="index.html">首页</a></li>
-	<li><a href="news_list.html" target="_self">新闻</a></li>
-	<li><a href="travels.html">游记</a></li>
-	<li><a href="#">农家乐</a></li>
+	<li><a id="home" class="selected" href="/index">首页</a></li>
+	<li><a href="/news_list" >新闻</a></li>
+	<li><a href="/travel_list">游记</a></li>
+	<li><a href="/nongjiale_list" >农家乐</a></li>
 
-	<li><a onclick="javascript:window.location.href='http://nixuchen.com'" >关于</a></li>
+	<li><a id="about" target="div_view" href="/about">关于</a></li>
 
 
 </ul>
 
 </div>
 
- <iframe id="div_view" width="100%">
+ <div id="div_view" width="100%">
 
+     {% block base_frame %}{% endblock %}
 
-	 {% block base_frame %}{% endblock %}
- </iframe>
+</div>
 
 
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/pgwmenu.min.js"></script>
-<script type="text/javascript"/>
 
-    <script type="text/javascript">
-        $(function(){
-            $("#div_nav a").click(function(){
-                var link = $(this).attr('href');
-                $('#div_view').attr('src', link);
-                var href = window.location.href;
-                window.location.href = href.substr(0, href.indexOf('#')) + '#' + link;
-                return false;
-            });
+<script type="text/javascript">
+jQuery(document).ready(function(){
+    $('#home').click(function(){
+         alert("test");
+        $('#div_view').html();
+        $('#div_view').load('index.html');
+    });
+    $('#about').click(function(){
+        $('#div_view').html();
+        $('#div_view').load('about.html');
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".div_nav a").each(function(){
+        $(this).click(function(){
+            $(".div_nav .hover").removeClass("hover");
+            $(this).addClass("hover");
+            return false;//防止页面跳转
         });
-    </script>
-
-
-
+    });
+});
+</script>
 
 
 </body>
