@@ -41,16 +41,16 @@ body { font-size: 14px;}
 
 </head>
 
-<body>
+<body onload="load()">
 
 <div id="div_nav">
 <ul class="pgwMenuCustom">
-	<li><a id="home" class="selected" href="/index">首页</a></li>
-	<li><a href="/news_list" >新闻</a></li>
-	<li><a href="/travel_list">游记</a></li>
-	<li><a href="/nongjiale_list" >农家乐</a></li>
+	<li><a id="home"  href="/">首页</a></li>
+	<li><a id="news_list" href="/news_list" >新闻</a></li>
+	<li><a id="travel_list" href="/travel_list">游记</a></li>
+	<li><a id="nongjiale_list" href="/nongjiale_list" >农家乐</a></li>
 
-	<li><a id="about" target="div_view" href="/about">关于</a></li>
+	<li><a id="about"  target="div_view" href="/about">关于</a></li>
 
 
 </ul>
@@ -67,31 +67,8 @@ body { font-size: 14px;}
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/pgwmenu.min.js"></script>
 
-<script type="text/javascript">
-jQuery(document).ready(function(){
-    $('#home').click(function(){
-         alert("test");
-        $('#div_view').html();
-        $('#div_view').load('index.html');
-    });
-    $('#about').click(function(){
-        $('#div_view').html();
-        $('#div_view').load('about.html');
-    });
-});
-</script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-    $(".div_nav a").each(function(){
-        $(this).click(function(){
-            $(".div_nav .hover").removeClass("hover");
-            $(this).addClass("hover");
-            return false;//防止页面跳转
-        });
-    });
-});
-</script>
+
 
 
 </body>
