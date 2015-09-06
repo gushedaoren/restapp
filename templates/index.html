@@ -1,11 +1,35 @@
 {% extends "base.html" %}
 
+
+
+{% block base_head %}
+<link type="text/css" rel="stylesheet" href="static/css/flexslider.css" />
+
+{% endblock %}
+
 {% block base_frame %}
 
 
+<!-- 代码部分begin -->
+	<section id="section">
+		<!-- 图片播放功能 -->
+		<div class="bannerPane">
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li><a href="http://nixuchen.com/" ><img src="static/images/ad-1.jpg" alt="http//nixuchen.com" /></a></li>
+						<li><a href="http://sh.58.com/yanglaoyuan/22827910126498x.shtml?psid=148458452188945943627363529&entinfo=22827910126498_0&PGTID=148458452188945943627363529&ClickID=1&iuType=p_1"><img src="static/images/ad-2.jpg" alt="http//nixuchen.com" /></a></li>
 
-
-<p>首页</p>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</section>
+    <script src="static/js/jquery.min.js"></script>
+	<script src="static/js/jquery.mmenu.min.all.js"></script>
+	<script src="static/js/jquery.flexslider.js"></script>
+	<script src="static/js/o-script.js"></script>
+    <!-- 代码部分end -->
 
 <script type="text/javascript">
 window.onload = function() {
