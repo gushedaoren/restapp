@@ -41,9 +41,15 @@ INSTALLED_APPS = (
     'rest_framework',
     'oliver',
     'bootstrap',
+    'tinymce',
+    'chongming',
 
 
 )
+TINYMCE_JS_URL =  '/static/tiny_mce/tiny_mce_src.js'
+
+TINYMCE_JS_ROOT = '/static/tiny_mce/'
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -98,7 +104,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -107,6 +113,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+FILE_CHARSET = 'utf-8'
+
+DEFAULT_CHARSET = 'utf-8'
 
 
 # Static files (CSS, JavaScript, Images)

@@ -21,14 +21,14 @@ from chongming import views
 urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
 
-               url(r'^', include('oliver.urls')),
-               #url(r'^', include('chongming.urls')),
+
+               
                 url(r'^$', views.index),
                 url(r'^about/', views.about),
                 url(r'^travel_list/', views.travel_list),
                 url(r'^news_list/', views.news_list),
                 url(r'^nongjiale_list/', views.nongjiale_list),
-
+                url(r'^tinymce/', include('tinymce.urls')),
 
                       )
 
