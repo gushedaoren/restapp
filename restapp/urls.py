@@ -22,7 +22,7 @@ urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
 
 
-               
+
                 url(r'^$', views.index),
                 url(r'^about/', views.about),
                 url(r'^travel_list/', views.travel_list),

@@ -15,6 +15,8 @@ class Article(models.Model):
 class News(Article):
 	newsSource=models.CharField(max_length=150)
 	newsTime=models.DateTimeField()
+	def __unicode__(self):
+		return self.title
 
 
 admin.site.register(News)
