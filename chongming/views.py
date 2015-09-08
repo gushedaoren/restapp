@@ -1,6 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.template import Context
+from django.template.loader import get_template
+from chongming.models import News
+
 
 def index(request):
 
@@ -21,12 +26,15 @@ def about(request):
 
 def news_list(request):
 
+    template = get_template('news_list.html')
+    news=News.objects.all().order_by("newsTime")
+    variables = Context({
 
-    return render(
-        request,
-        "news_list.html",
+    'news': news
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
 
-    )
 
 def travel_list(request):
 

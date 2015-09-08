@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 
 {% block base_frame %}
-
-<P>新闻</P>
+{% if news %}
+<ul>
+{% for article in news %}
+<li><a href="{{ bookmark.link.url }}">
+{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No news found.</p>
+{% endif %}
 
 
 
