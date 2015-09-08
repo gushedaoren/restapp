@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block base_frame %}
+
+
+
+<div>
 {% if news %}
 <ul>
 {% for article in news %}
@@ -11,6 +15,7 @@
 {% else %}
 <p>No news found.</p>
 {% endif %}
+</div>
 
 
 

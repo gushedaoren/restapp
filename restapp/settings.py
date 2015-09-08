@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'restapp',
     'rest_framework',
     'oliver',
-    'bootstrap',
+    'bootstrap3',
     'tinymce',
     'chongming',
 
