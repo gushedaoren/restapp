@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.contrib import admin
 from tinymce.models import HTMLField
@@ -6,7 +7,7 @@ class Article(models.Model):
 	title = models.CharField(max_length=150)
 	created = models.DateTimeField()
 	lastEditTime = models.DateTimeField()
-	content = HTMLField()
+	content = RichTextField()
 	author = models.CharField(max_length=150)
 	class Meta:
 		abstract = True
