@@ -27,7 +27,7 @@ def about(request):
 def news_list(request):
 
     template = get_template('news_list.html')
-    news=News.objects.all().order_by("newsTime")
+    news=News.objects.all().order_by("-newsTime")
     variables = Context({
 
     'news': news
