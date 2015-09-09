@@ -1,4 +1,3 @@
-from ckeditor.fields import RichTextField
 from django.db import models
 from django.contrib import admin
 from tinymce.models import HTMLField
