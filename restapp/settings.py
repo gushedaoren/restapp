@@ -138,6 +138,7 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+CKEDITOR_MEDIA_PREFIX = "/media/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "article_images"
 CKEDITOR_CONFIGS = {
     'default': {
