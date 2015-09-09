@@ -5,17 +5,20 @@
 
 
 <div >
-
 {% if news %}
-<ul>
-{% for article in news %}
-    <p></p>
-<li><a href="/news_detial/{{article.id}}">
-{{ article.title }}</a>
+<p>
 
-{{ article.newsTime }}</li>
-{% endfor %}
-</ul>
+<a style="font-weight:bold;">
+<font size="+2">{{ news.title }}</font></a>
+    
+{{ news.newsTime }}
+
+</p>
+<p>
+    {% autoescape off %}
+    {{news.content}}
+    {% endautoescape %}
+</p>
 {% else %}
 <p>No news found.</p>
 {% endif %}

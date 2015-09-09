@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.template import Context
@@ -34,6 +34,18 @@ def news_list(request):
     })
     output = template.render(variables)
     return HttpResponse(output)
+
+
+def news_detial(request,pk):
+    news = get_object_or_404(News, pk=pk)
+    template = get_template('news_detial.html')
+    variables = Context({
+
+    'news': news
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
+
 
 
 def travel_list(request):
