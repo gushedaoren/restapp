@@ -7,7 +7,7 @@ class Article(models.Model):
 	title = models.CharField(max_length=150)
 	created = models.DateTimeField()
 	lastEditTime = models.DateTimeField()
-	content = RichTextField()
+	content = HTMLField()
 	author = models.CharField(max_length=150)
 	class Meta:
 		abstract = True
