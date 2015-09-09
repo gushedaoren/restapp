@@ -31,6 +31,8 @@ urlpatterns =patterns('',
                 url(r'^nongjiale_list/', views.nongjiale_list),
                 url(r'^tinymce/', include('tinymce.urls')),
                 url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
+                url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
                       )
 
 urlpatterns += staticfiles_urlpatterns()
