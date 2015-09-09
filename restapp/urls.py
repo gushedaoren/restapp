@@ -30,7 +30,7 @@ urlpatterns =patterns('',
                 url(r'^news_detial/(.+)/$', views.news_detial),
                 url(r'^nongjiale_list/', views.nongjiale_list),
                 url(r'^tinymce/', include('tinymce.urls')),
-                
+
 
                 url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
                       )
