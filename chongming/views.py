@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.template import Context
 from django.template.loader import get_template
-from chongming.models import News
+from chongming.models import News, Youji
 
 
 def index(request):
@@ -51,11 +51,15 @@ def news_detial(request,pk):
 def travel_list(request):
 
 
-    return render(
-        request,
-        "travels_list.html",
+    template = get_template('travels_list.html')
+    youjis=Youji.objects.all().order_by("-created")
+    variables = Context({
 
-    )
+
+    'youjis' : youjis
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
 
 
 def nongjiale_list(request):

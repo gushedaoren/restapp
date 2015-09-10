@@ -2,7 +2,27 @@
 
 {% block base_frame %}
 
-<P>游记</P>
+
+
+
+<div id="linknav">
+
+{% if youjis %}
+<ul>
+{% for article in youjis %}
+
+<li >
+    <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
+    <a href="/news_detial/{{youji.id}}">
+{{ article.title }}</a>
+
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No youji found.</p>
+{% endif %}
+</div>
 
 
 <script type="text/javascript">
