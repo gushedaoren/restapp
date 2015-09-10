@@ -61,6 +61,15 @@ def travel_list(request):
     output = template.render(variables)
     return HttpResponse(output)
 
+def travel_detial(request,pk):
+    youji = get_object_or_404(Youji, pk=pk)
+    template = get_template('travel_detial.html')
+    variables = Context({
+
+    'youji': youji
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
 
 def nongjiale_list(request):
 

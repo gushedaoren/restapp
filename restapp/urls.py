@@ -30,9 +30,8 @@ urlpatterns =patterns('',
                 url(r'^news_detial/(.+)/$', views.news_detial),
                 url(r'^nongjiale_list/', views.nongjiale_list),
                 url(r'^tinymce/', include('tinymce.urls')),
+                url(r'^travel_detial/(.+)/$', views.travel_detial),
 
-
-                url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
-                      )
+                url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),                      )
 
 urlpatterns += staticfiles_urlpatterns()
