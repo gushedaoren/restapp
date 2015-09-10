@@ -28,19 +28,4 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': '\u65b0\u95fb',
             },
         ),
-        migrations.CreateModel(
-            name='Youji',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('title', models.CharField(unique=True, max_length=150)),
-                ('created', models.DateTimeField()),
-                ('lastEditTime', models.DateTimeField()),
-                ('content', tinymce.models.HTMLField()),
-                ('author', models.CharField(max_length=150)),
-            ],
-            options={
-                'verbose_name': '\u6e38\u8bb0',
-                'verbose_name_plural': '\u6e38\u8bb0',
-            },
-        ),
     ]
