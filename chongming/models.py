@@ -5,9 +5,9 @@ from django.db.models import ImageField
 from tinymce.models import HTMLField
 # Create your models here.
 class Article(models.Model):
-	title = models.CharField(max_length=150,unique=True)
-	created = models.DateTimeField()
-	lastEditTime = models.DateTimeField()
+	title = models.CharField(max_length=150, unique=True)
+	created = models.DateTimeField(auto_now_add=True, auto_created=True)
+	lastEditTime = models.DateTimeField(auto_now=True, auto_created=True)
 	content = HTMLField()
 	author = models.CharField(max_length=150)
 	class Meta:
@@ -24,7 +24,7 @@ class News(Article):
 		verbose_name_plural = "新闻"
 
 class Youji(Article):
-	icon_url=models.CharField(max_length=1000,blank=True)
+	icon_url=models.CharField(max_length=1000, blank=True)
 	def __unicode__(self):
 		return self.title
 	class Meta:
