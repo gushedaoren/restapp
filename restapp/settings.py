@@ -48,9 +48,9 @@ INSTALLED_APPS = (
 
 
 )
-TINYMCE_JS_URL =  '/static/tiny_mce/tiny_mce_src.js'
+TINYMCE_JS_URL = 'static/tiny_mce/tiny_mce_src.js'
 
-TINYMCE_JS_ROOT = '/static/tiny_mce/'
+TINYMCE_JS_ROOT = 'static/tiny_mce/'
 
 TINYMCE_DEFAULT_CONFIG = {
   'file_browser_callback': 'mce_filebrowser',
