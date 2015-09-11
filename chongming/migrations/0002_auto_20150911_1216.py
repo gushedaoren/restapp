@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
         ('chongming', '0001_initial'),
     ]
 
+
     operations = [
         migrations.RenameField(
             model_name='nongjiale',

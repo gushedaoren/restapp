@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
         ('chongming', '0003_auto_20150911_1232'),
     ]
 
+
     operations = [
         migrations.AlterField(
             model_name='nongjiale',

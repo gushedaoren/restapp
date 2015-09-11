@@ -10,5 +10,6 @@ class Migration(migrations.Migration):
         ('chongming', '0004_auto_20150911_1248'),
     ]
 
+
     operations = [
     ]
