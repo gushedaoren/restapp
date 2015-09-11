@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.template import Context
 from django.template.loader import get_template
-from chongming.models import News, Youji
+from chongming.models import News, Youji, Nongjiale
 
 
 def index(request):
@@ -74,8 +74,22 @@ def travel_detial(request,pk):
 def nongjiale_list(request):
 
 
-    return render(
-        request,
-        "nongjiale_list.html",
+    template = get_template('nongjiale_list.html')
+    nongjiales=Nongjiale.objects.all().order_by("-created")
+    variables = Context({
 
-    )
+
+    'nongjiales' : nongjiales
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
+
+def nongjiale_detial(request,pk):
+    njl = get_object_or_404(Nongjiale, pk=pk)
+    template = get_template('nongjiale_detial.html')
+    variables = Context({
+
+    'njl': njl
+    })
+    output = template.render(variables)
+    return HttpResponse(output)

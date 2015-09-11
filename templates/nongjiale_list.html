@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 
 {% block base_frame %}
+{% load static %}
+<div >
 
-<P>农家乐</P>
+{% if nongjiales %}
+<ul>
+{% for njl in nongjiales %}
+
+<li >
+    <img onerror="this.src='/static/images/icon.jpg'" src="/media/{{njl.logo}}" height="100" width="100" />
+    <a href="/nongjiale_detial/{{njl.id}}">
+{{ njl.title }}</a>
+
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No youji found.</p>
+{% endif %}
+</div>
 
 
 <script type="text/javascript">

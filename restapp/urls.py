@@ -13,6 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+import os
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -31,7 +32,14 @@ urlpatterns =patterns('',
                 url(r'^nongjiale_list/', views.nongjiale_list),
                 url(r'^tinymce/', include('tinymce.urls')),
                 url(r'^travel_detial/(.+)/$', views.travel_detial),
+                url(r'^nongjiale_detial/(.+)/$', views.nongjiale_detial),
+                url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
 
-                url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),                      )
+
+                      )
 
 urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += patterns("",
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True }),
+)
