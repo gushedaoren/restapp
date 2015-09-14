@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 
+{% block base_head %}
+
+<link href="/static/imgshow/css/index1.css" rel="stylesheet" />
+    <script src="/static/imgshow/js/jquery.min.js"></script>
+    <script>
+        function Showbigimg() {
+            var rom = parseInt(5 * Math.random());
+
+            var imgurl = $(".zppic:eq(" + rom + ")").find("img").attr("src");
+            $(".bigimg").attr({ "src": imgurl });
+
+            var bwidth = $(".bigimg").width();
+            var bheight = $(".bigimg").height();
+            var o = { left: "50%", width: "800px", height: "600px", top: "100px", "margin-left": "-400px" };
+
+            var pic = $(".zppic:eq(" + rom + ")");
+            $(".bigpic").css({ "left": pic.position().left, "top": pic.position().top });
+            $(".bigpic").show();
+
+            $(".bigpic").animate(o, 2000, function () {
+                setTimeout(function () {
+                    $(".bigpic").animate({ width: "100px", left: pic.position().left, top: pic.position().top, "margin-left": "0", "margin-top": "0" }, 1000, function () {
+                        $(".bigpic").hide();
+                        setTimeout(Showbigimg, 10000);
+                    });
+                }, 3000)
+            });
+        }
+
+        $(function () {
+            Showbigimg();
+
+        })
+    </script>
+
+
+{% endblock %}
+
 {% block base_frame %}
 
 
@@ -14,22 +52,90 @@
 
 
 </p>
+<div class="zp">
+
+        <table>
+
+            <tr>
+                {% if njl.img1 %}
+                <td>
+                    <div class="zppic">
+                        <img src="/media/{{njl.img1}}" />
+                    </div>
+                </td>
+                {% endif %}
+
+                {% if njl.img2 %}
+                <td>
+                    <div class="zppic">
+                        <img src="/media/{{njl.img2}}" />
+                    </div>
+                </td>
+                {% endif %}
+
+
+
+                {% if njl.img3 %}
+                <td>
+                    <div class="zppic">
+                        <img src="/media/{{njl.img3}}" />
+                    </div>
+                </td>
+                {% endif %}
+
+
+                {% if njl.img4 %}
+                <td>
+                    <div class="zppic">
+                        <img src="/media/{{njl.img4}}" />
+                    </div>
+                </td>
+                {% endif %}
+
+
+                {% if njl.img5 %}
+                <td>
+                    <div class="zppic">
+                        <img src="/media/{{njl.img5}}" />
+                    </div>
+                </td>
+                {% endif %}
+            </tr>
+        </table>
+        <div class="bigpic" style="display: none;">
+            <img class="bigimg" src="" />
+        </div>
+    </div>
+
+
+
+<div>
     <p>
-
-       {% block baobei_frame %}{% endblock %}
-
-
-    </p>
-<p>
     {% autoescape off %}
     {{njl.content}}
     {% endautoescape %}
-</p>
+   </p>
+    <p>
+        地址：{{njl.address}}
+    </p>
+    <p>
+        公交线路：{{njl.busRoutes}}
+    </p>
+    <p>
+        自驾线路：{{njl.carRoutes}}
+    </p>
+
+    <p>
+        联系人：{{njl.contact}}
+    </p>
+     <p>
+        联系电话：{{njl.phone}}
+    </p>
+</div>
 {% else %}
 <p>No news found.</p>
 {% endif %}
 </div>
-
 
 
 <script type="text/javascript">
