@@ -54,6 +54,22 @@ class Nongjiale(Article):
 		verbose_name = "农家乐"
 		verbose_name_plural = "农家乐"
 
+class AD(Article):
+	logo = ImageField(blank=True)
+	img1 = ImageField(blank=True)
+	img2 = ImageField(blank=True)
+	img3 = ImageField(blank=True)
+	img4 = ImageField(blank=True)
+	img5 = ImageField(blank=True)
+	link = models.CharField(max_length=150)
+
+	def __unicode__(self):
+		return self.title
+	class Meta:
+		verbose_name = "广告"
+		verbose_name_plural = "广告"
+
 admin.site.register(News)
 admin.site.register(Youji)
 admin.site.register(Nongjiale)
+admin.site.register(AD)

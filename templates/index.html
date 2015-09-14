@@ -31,6 +31,53 @@
 	<script src="static/js/o-script.js"></script>
     <!-- 代码部分end -->
 
+<div>
+	<div width="50%">
+		<div >
+
+{% if news %}
+<ul>
+{% for article in news %}
+    <p></p>
+<li><a href="/news_detial/{{article.id}}">
+{{ article.title }}</a>
+
+{{ article.newsTime }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No news found.</p>
+{% endif %}
+</div>
+
+	</div>
+
+	<div width="50%">
+
+
+
+<div >
+
+{% if youjis %}
+<ul>
+{% for article in youjis %}
+
+<li >
+    <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
+    <a href="/travel_detial/{{article.id}}">
+{{ article.title }}</a>
+
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No youji found.</p>
+{% endif %}
+</div>
+	</div>
+</div>
+
+
 <script type="text/javascript">
 window.onload = function() {
   document.getElementById('home').className = 'selected';
