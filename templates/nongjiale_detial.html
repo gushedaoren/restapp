@@ -138,22 +138,6 @@
 </div>
 
 <div>
-
-    {% get_comment_form for chongming.nongjiale as form %}
-    <form action="{% comment_form_target %}" method="POST">
-    {% csrf_token %}
-    {{ form.comment }}
-    {{ form.honeypot }}
-    {{ form.content_type }}
-    {{ form.object_pk }}
-    {{ form.timestamp }}
-    {{ form.security_hash }}
-
-    <input type="submit" value="Add comment" id="id_submit" />
-    </form>
-
-</div>
-<div>
     <p>更多详情:</p>
     <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
 </div>
