@@ -41,5 +41,6 @@ urlpatterns =patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += patterns("",
+    (r'^comments/', include('django_comments.urls')),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True }),
 )

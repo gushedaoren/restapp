@@ -47,6 +47,7 @@ class Nongjiale(Article):
 	img3 = ImageField(blank=True)
 	img4 = ImageField(blank=True)
 	img5 = ImageField(blank=True)
+	enable_comments = models.BooleanField(default=True)
 	def __unicode__(self):
 		return self.title
 	class Meta:
