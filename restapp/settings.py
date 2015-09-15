@@ -152,8 +152,8 @@ TINYMCE_JS_ROOT = '/static/tiny_mce/'
 
 TINYMCE_DEFAULT_CONFIG = {
   'file_browser_callback': 'mce_filebrowser',
-  'width':800,
+  'width': 800,
 
   'height': 600,
 }
-SITE_ID=0001
+SITE_ID = 1
