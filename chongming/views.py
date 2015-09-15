@@ -9,20 +9,16 @@ from chongming.models import News, Youji, Nongjiale
 
 def index(request):
     template = get_template('home.html')
-    news=News.objects.all().order_by("-newsTime")[:20]
+    news=News.objects.all().order_by("-newsTime")[:10]
     youjis=Youji.objects.all().order_by("-created")[:3]
-    youji0=youjis[0]
-    youji1=youjis[1]
-    youji2=youjis[2]
+
     nongjiales=Nongjiale.objects.all().order_by("-created")[:3]
     variables = Context({
 
         'news': news,
         'youjis': youjis,
-        'youji0': youji0,
-        'youji1': youji1,
-        'youji2': youji2,
-        "njls": nongjiales
+
+        "nongjiales": nongjiales
     })
 
     output = template.render(variables)
