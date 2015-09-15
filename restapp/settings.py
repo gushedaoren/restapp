@@ -128,6 +128,10 @@ STATIC_ROOT = 'staticfiles/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    ('css', 'staticfiles/css/'),
+    ('js', 'staticfiles/js/'),
+    ('images', '/static/images/'),
+
 )
 
 REST_FRAMEWORK = {

@@ -15,9 +15,11 @@ Including another URLconf
 """
 import os
 from django.conf.urls import include, url,patterns
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from chongming import views
+from restapp import settings
 
 urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
@@ -42,5 +44,8 @@ urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += patterns("",
     (r'^comments/', include('django_comments.urls')),
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True }),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True}),
+    (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
+    (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/css'}),
+    (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/js'}),
 )

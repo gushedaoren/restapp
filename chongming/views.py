@@ -8,7 +8,7 @@ from chongming.models import News, Youji, Nongjiale
 
 
 def index(request):
-    template = get_template('index.html')
+    template = get_template('home.html')
     news=News.objects.all().order_by("-newsTime")[:20]
     youjis=Youji.objects.all().order_by("-created")[:5]
     variables = Context({
