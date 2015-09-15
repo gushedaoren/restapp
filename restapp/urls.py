@@ -49,3 +49,7 @@ urlpatterns += patterns("",
     (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/css'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/js'}),
 )
+
+urlpatterns = [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
