@@ -491,7 +491,7 @@ a.gal:hover img {
 
 .tab_cont .text1 {
 	position: relative;
-	top: 5px;
+	top: -5px;
 	margin-bottom: 17px;
 }
 
