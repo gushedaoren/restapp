@@ -126,8 +126,8 @@
 							<div>
 
 
-								{% autoescape off %}
-								{{article.content |truncatechars:100|safe }}
+							{% autoescape off %}
+							{{article.content |truncatewords_html:"3" }}
 					        	{% endautoescape %}
 
 
