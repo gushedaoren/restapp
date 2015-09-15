@@ -3,8 +3,8 @@
 {% block base_head %}
 		 <title>崇明慢生活</title>
 		 <meta charset="utf-8">
-		 <link rel="icon" href="images/favicon.ico">
-		 <link rel="shortcut icon" href="images/favicon.ico" />
+		 <link rel="icon" href="/static/images/favicon.ico">
+		 <link rel="shortcut icon" href="/static/images/favicon.ico" />
 		 <link rel="stylesheet" href="css/style.css">
 		 <link rel="stylesheet" href="css/slider.css">
 		 <script src="js/jquery.js"></script>
@@ -46,7 +46,7 @@
 		 <!--[if lt IE 8]>
 			 <div style=' clear: both; text-align:center; position: relative;'>
 				 <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-					 <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+					 <img src="http://storage.ie6countdown.com/assets/100//static/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
 				 </a>
 			</div>
 		<![endif]-->
@@ -64,7 +64,7 @@
  <header> 
 	<div class="container_12">
 		<div class="grid_12"> 
-		<h1><a href="#"><img src="images/logo.png" alt="Gerald Harris attorney at law"></a> </h1>
+		<h1><a href="#"><img src="/static/images/logo.png" alt="Gerald Harris attorney at law"></a> </h1>
 					
 				 
 		  <div class="clear"></div>
@@ -93,15 +93,15 @@
 				<div class="slider">
 					<a href="#" class="prev"></a><a href="#" class="next"></a>
 					<ul class="items">
-						<li><img src="images/slide.jpg" alt="">
+						<li><img src="/static/images/slide.jpg" alt="">
 								<div class="banner">
 									<div>THERE ARE PLENTY OF PLACES</div><br>
 									<span> that are worth seeing</span>
 								</div>
 						</li>
-						<li><img src="images/slide1.jpg" alt=""></li>
-						<li><img src="images/slide2.jpg" alt=""></li>
-						<li><img src="images/slide3.jpg" alt=""></li>
+						<li><img src="/static/images/slide1.jpg" alt=""></li>
+						<li><img src="/static/images/slide2.jpg" alt=""></li>
+						<li><img src="/static/images/slide3.jpg" alt=""></li>
 					</ul>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 			{% for article in youjis %}
 			<div class="grid_4">
 					<figure>
-						<div><img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" width="100%" height="100%"></div>
+						<div><img onerror="this.src='/static//static/images/icon.jpg'" src="{{article.icon_url}}" width="100%" height="100%"></div>
 				  		<figcaption>
 							<h4>{{article.title}}</h4>
 							<div>

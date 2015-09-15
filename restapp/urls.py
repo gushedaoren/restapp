@@ -45,11 +45,9 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += patterns("",
     (r'^comments/', include('django_comments.urls')),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True}),
-    (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
+   # (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
     (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/css'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/js'}),
-)
+    (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
 
-urlpatterns = [
-    # ... the rest of your URLconf goes here ...
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
