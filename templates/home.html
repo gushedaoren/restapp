@@ -22,9 +22,10 @@
 									<span>崇明慢生活</span>
 								</div>
 						</li>
-						<li><img src="/static/images/slide1.jpg" alt=""></li>
-						<li><img src="/static/images/slide2.jpg" alt=""></li>
-						<li><img src="/static/images/slide3.jpg" alt=""></li>
+						{% for ad in ads %}
+									<li><a href="http://www.sina.com.cn" ><img  src="/media/{{ad.logo}}" alt=""/></a></li>
+						{% endfor %}
+
 					</ul>
 				</div>
 			</div>
@@ -147,6 +148,12 @@ window.onload = function(){
 
   nav.className = 'current';
 };
+
+ </script>
+	<script type="text/javascript" >
+function subgo() {
+    alert("test");
+}
 
  </script>
 </body>

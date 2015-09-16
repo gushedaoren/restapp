@@ -14,11 +14,12 @@ def index(request):
     youjis= Youji.objects.all().order_by("-created")[:3]
 
     nongjiales=Nongjiale.objects.all().order_by("-created")[:3]
+    ads=AD.objects.all().order_by("-created")[:3]
     variables = Context({
 
         'news': news,
         'youjis': youjis,
-
+        'ads': ads,
         "nongjiales": nongjiales
     })
 
