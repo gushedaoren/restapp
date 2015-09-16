@@ -1,24 +1,9 @@
 {% extends "base.html" %}
 
 {% block base_head %}
-		 <title>崇明慢生活</title>
-		 <meta charset="utf-8">
-		 <link rel="icon" href="/static/images/favicon.ico">
-		 <link rel="shortcut icon" href="/static/images/favicon.ico" />
-		 <link rel="stylesheet" href="/static/css/style.css">
-		 <link rel="stylesheet" href="/static/css/slider.css">
-		 <script src="/static/js/jquery.js"></script>
-		 <script src="/static/js/jquery-migrate-1.1.1.js"></script>
-		 <script src="/static/js/superfish.js"></script>
-		 <script src="/static/js/sForm.js"></script>
-		 <script src="/static/js/jquery.jqtransform.js"></script>
-		 <script src="/static/js/jquery.equalheights.js"></script>
-		 <script src="/static/js/jquery.easing.1.3.js"></script>
-		 <script src="/static/js/tms-0.4.1.js"></script>
-		<script src="/static/js/jquery-ui-1.10.3.custom.min.js"></script>
-		 <script src="/static/js/jquery.ui.totop.js"></script>
-		 <script>
-			$(window).load(function(){
+
+  <script>
+	        $(window).load(function(){
 			$('.slider')._TMS({
 							show:0,
 							pauseOnHover:false,
@@ -26,8 +11,8 @@
 							nextBu:'.next',
 							playBu:false,
 							duration:800,
-							preset:'random', 
-							pagination:false,//'.pagination',true,'<ul></ul>'
+							preset:'random',
+							pagination:false,//'.pagination',true,'&lt;ul>&lt;/ul>'
 							pagNums:false,
 							slideshow:8000,
 							numStatus:false,
@@ -36,55 +21,16 @@
 				progressBar:false
 			})	;
 			 $( "#tabs" ).tabs();
-		 
+
 		$().UItoTop({ easingType: 'easeOutQuart' });
 			});
-			
-			
-			
+
 		 </script>
-		 <!--[if lt IE 8]>
-			 <div style=' clear: both; text-align:center; position: relative;'>
-				 <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-					 <img src="http://storage.ie6countdown.com/assets/100//static/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-				 </a>
-			</div>
-		<![endif]-->
-		<!--[if lt IE 9]>
-			<script src="/static/js/html5shiv.js"></script>
-			<link rel="stylesheet" media="screen" href="/static/css/ie.css">
-
-		<![endif]-->
-		 </head>
-
 {% endblock %}
 {% block base_frame %}
 <body	class="page1">
 <!--==============================header=================================-->
- <header> 
-	<div class="container_12">
-		<div class="grid_12"> 
-		<h1><a href="#"><img src="/static/images/logo.png" alt="Gerald Harris attorney at law"></a> </h1>
-					
-				 
-		  <div class="clear"></div>
-			</div>
-<div class="menu_block">
-					 <nav	class="" >
-						<ul class="sf-menu">
-									 <li class="current"><a href="index">首页</a></li>
 
-									 <li><a href="news_list">新闻</a></li>
-									 <li><a href="travel_list">游记</a></li>
-									 <li><a href="nongjiale_list">农家乐</a></li>
-									 <li><a href="about">关于</a></li>
-								 </ul>
-							</nav>
-					 <div class="clear"></div>
-					 </div>
-					 <div class="clear"></div>
-					</div>
-</header>
 <div class="main">
 	<div class="container_12">
 		<div class="grid_12">
@@ -213,57 +159,19 @@
 	</div>
 	<div class="clear"></div></div>
 </div>
-<div class="bottom_block">
-	<div class="container_12">
-		<div class="grid_2 prefix_2">
-			<ul>
-				<li><a href="#">FAQS Page</a></li>
-				<li><a href="#">People Say</a></li>
-			</ul>
-		</div>
-		<div class="grid_2">
-			<ul>
-				<li><a href="#">Useful links</a></li>
-				<li><a href="#">Partners</a></li>
-			</ul>
-		</div>
-		<div class="grid_2">
-			<ul>
-				<li><a href="#">Insurance</a></li>
-				<li><a href="#">Family Travel</a></li>
-			</ul>
-		</div>
-		<div class="grid_2">
-			<h4>联系我们:</h4>
-			TEL: 13761398648<br><a href="#">oliver@chongming.love</a>
-		 
-		</div>
-		<div class="clear"></div>
-		</div>
-	</div>
-<!--==============================footer=================================-->
 
-</div>
-<footer>		
-	<div class="container_12">
-	<div class="grid_12">
-		<div class="socials">
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
-		</div>
-			<div class="copy">
-		 &copy; Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-		 </div></div>
-		 <div class="clear"></div>
-	</div>
 
-</footer>
 
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 
+<script type="text/javascript" >
+window.onload = function(){
+  var nav = document.getElementById('home');
 
+  nav.className = 'current';
+};
+
+ </script>
 </body>
 
 {% endblock %}

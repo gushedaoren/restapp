@@ -21,11 +21,14 @@
 {% endif %}
 </div>
 
+<script type="text/javascript" >
+window.onload = function(){
+  var nav = document.getElementById('nav_new_list');
 
-
-<script type="text/javascript">
-window.onload = function() {
-  document.getElementById('news_list').className = 'selected';
+  nav.className = 'current';
 };
-   </script>
+
+  </script>
+
+
 {% endblock %}
