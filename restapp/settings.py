@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'chongming',
     'mce_filebrowser',
     'django.contrib.sites',
-    'django_comments',
+
 
 
 
