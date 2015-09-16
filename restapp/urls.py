@@ -36,6 +36,7 @@ urlpatterns =patterns('',
                 url(r'^travel_detial/(.+)/$', views.travel_detial),
                 url(r'^nongjiale_detial/(.+)/$', views.nongjiale_detial),
                 url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
+                url(r'^ad_detial/(.+)/$', views.ad_detial),
 
 
                       )

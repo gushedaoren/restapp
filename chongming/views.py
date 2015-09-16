@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 # Create your views here.
 from django.template import Context, RequestContext
 from django.template.loader import get_template
-from chongming.models import News, Youji, Nongjiale
+from chongming.models import News, Youji, Nongjiale, AD
 
 
 def index(request):
@@ -120,6 +120,16 @@ def nongjiale_detial(request,pk):
     variables = Context({
 
     'njl': njl
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
+
+def ad_detial(request,pk):
+    ad = get_object_or_404(AD, pk=pk)
+    template = get_template('ad_detial.html')
+    variables = Context({
+
+        'ad': ad
     })
     output = template.render(variables)
     return HttpResponse(output)
