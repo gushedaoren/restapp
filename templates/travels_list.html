@@ -9,7 +9,7 @@
 <div class="list_item">
 
 
-{% for article in youjis %}
+{% for article in object_list %}
     <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
 <div class="extra_wrapper">
 			<div class="text1">
@@ -25,6 +25,23 @@
 {% endfor %}
 
 </div>
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">上一页</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>
+
+
 </div>
 
 <script type="text/javascript">

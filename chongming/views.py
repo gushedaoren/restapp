@@ -35,7 +35,7 @@ def about(request):
 
 def news_list(request):
 
-    template = get_template('news_list.html')
+
     news=News.objects.all().order_by("-newsTime")
     paginator = Paginator(news, 20) # Show 25 contacts per page
 
@@ -67,15 +67,22 @@ def news_detial(request,pk):
 def travel_list(request):
 
 
-    template = get_template('travels_list.html')
+
     youjis=Youji.objects.all().order_by("-created")
-    variables = Context({
+    paginator = Paginator(youjis, 10) # Show 25 contacts per page
 
+    page = request.GET.get('page')
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        object_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        object_list = paginator.page(paginator.num_pages)
 
-    'youjis' : youjis
-    })
-    output = template.render(variables)
-    return HttpResponse(output)
+    return render_to_response('travels_list.html', {'object_list': object_list})
+
 
 def travel_detial(request,pk):
     youji = get_object_or_404(Youji, pk=pk)
@@ -90,15 +97,22 @@ def travel_detial(request,pk):
 def nongjiale_list(request):
 
 
-    template = get_template('nongjiale_list.html')
+
     nongjiales=Nongjiale.objects.all().order_by("-created")
-    variables = Context({
+    paginator = Paginator(nongjiales, 10) # Show 25 contacts per page
 
+    page = request.GET.get('page')
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        object_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        object_list = paginator.page(paginator.num_pages)
 
-    'nongjiales' : nongjiales
-    })
-    output = template.render(variables)
-    return HttpResponse(output)
+    return render_to_response('nongjiale_list.html', {'object_list': object_list})
+
 
 def nongjiale_detial(request,pk):
     njl = get_object_or_404(Nongjiale, pk=pk)
