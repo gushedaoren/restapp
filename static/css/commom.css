@@ -26,3 +26,17 @@
 	top: 5px;
 	margin-bottom: 17px;
 }
+
+.main_body {
+	background: #fff;
+	width: 1270px;
+	margin: 0px auto;
+	padding:10px 15px;
+}
+
+.main_body_detial {
+	background: #fff;
+	width: 1270px;
+	margin: 0px auto;
+	padding:10px 45px;
+}
