@@ -9,14 +9,14 @@
 
 
 .items {
-	display: none;	
+	display: none;
 	overflow: hidden;
 }
 
 .slider-block {
 	position:relative;
 	height: 724px;
-	
+
 }
 .slider {
 	z-index:2;
@@ -68,7 +68,7 @@ a.prev, a.next {
 	position: absolute;
 	display: block;
 	bottom: 49px;
-	z-index: 999;
+	z-index: 900;
 	left: 45px;
 
 }
@@ -83,31 +83,6 @@ a.next {
 a.next:hover,a.prev:hover  {
 	opacity: 0.8;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
