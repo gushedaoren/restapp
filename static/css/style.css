@@ -5,6 +5,7 @@
 @import "../css/reset.css";
 @import "../css/grid.css";
 @import "../css/superfish.css";
+@import "../css/commom.css";
 
 input {
 	outline:  none !important;
@@ -29,7 +30,9 @@ body {
 	font: 13px/19px  Arial, Helvetica, sans-serif;
 	color:#666565;
 	position:relative;
+	height: auto;
 	min-width:960px;
+	min-height:100%;
 	background: #000;
 	background: url(../images/bg_body.jpg) center 0 no-repeat #d6bba0;
 
@@ -494,6 +497,9 @@ a.gal:hover img {
 	top: 5px;
 	margin-bottom: 17px;
 }
+
+
+
 
 .style1 {
 	color: #000;

@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:margin-right="http://www.w3.org/1999/xhtml"
-      xmlns:margin-left="http://www.w3.org/1999/xhtml">
+	  xmlns:margin-left="http://www.w3.org/1999/xhtml" xmlns:overflow-y="http://www.w3.org/1999/xhtml"
+	  xmlns:overflow="http://www.w3.org/1999/xhtml">
 {% load bootstrap3 %}
 {% load staticfiles %}
 <head>
@@ -56,7 +57,8 @@ var _hmt = _hmt || [];
  {% block base_head %}{% endblock %}
 </head>
 
-<body onload="">
+<body  >
+
  <header>
 	<div class="container_12">
 		<div class="grid_12">
@@ -82,7 +84,13 @@ var _hmt = _hmt || [];
 					</div>
 </header>
 
-     {% block base_frame %}{% endblock %}
+ <div class="base_content">
+
+	   {% block base_frame %}{% endblock %}
+
+ </div>
+
+
 
 
 <div class="bottom_block">
@@ -137,4 +145,6 @@ var _hmt = _hmt || [];
 
 
 </body>
+
+
 </html>

@@ -2,28 +2,30 @@
 
 {% block base_frame %}
 
-
-
-
+{% load static %}
 <div >
 
-{% if youjis %}
-<ul>
+
+<div class="list_item">
+
+
 {% for article in youjis %}
-
-<li >
     <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
-    <a href="/travel_detial/{{article.id}}">
-{{ article.title }}</a>
+<div class="extra_wrapper">
+			<div class="text1">
+				<a href="/travel_detial/{{article.id}}">{{article.title}}</a> </div>
+		    {% autoescape off %}
+			{{article.content |truncatewords_html:"10" }}
+			{% endautoescape %}
+<a href="/travel_detial/{{article.id}}" class="btn">详情</a>
 
-</li>
-{% endfor %}
-</ul>
-{% else %}
-<p>No youji found.</p>
-{% endif %}
+
 </div>
 
+{% endfor %}
+
+</div>
+</div>
 
 <script type="text/javascript">
 window.onload = function() {

@@ -35,12 +35,16 @@
         })
     </script>
 
+<style>
 
+
+
+</style>
 {% endblock %}
 
 {% block base_frame %}
 
-
+<div class="content">
 
 <div >
 {% if njl %}
@@ -110,11 +114,11 @@
 
 
 <div>
-    <p>
+ <p>
     {% autoescape off %}
     {{njl.content}}
     {% endautoescape %}
-   </p>
+  </p>
     <p>
         地址：{{njl.address}}
     </p>
@@ -142,7 +146,7 @@
     <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
 </div>
 
-
+</div>
 <script type="text/javascript">
 window.onload = function() {
   document.getElementById('nongjiale_list').className = 'current';

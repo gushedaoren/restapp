@@ -3,24 +3,21 @@
 {% block base_frame %}
 {% load static %}
 <div >
-
-{% if nongjiales %}
-<ul>
+<div class="list_item"  >
 {% for njl in nongjiales %}
-
-<li >
-    <img onerror="this.src='/static/images/icon.jpg'" src="/media/{{njl.logo}}" height="100" width="100" />
-    <a href="/nongjiale_detial/{{njl.id}}">
-{{ njl.title }}</a>
-
-</li>
-{% endfor %}
-</ul>
-{% else %}
-<p>No youji found.</p>
-{% endif %}
+			<img onerror="this.src='/static/images/icon.jpg'" src="/media/{{njl.logo}}" width="100" height="100">
+		<div class="extra_wrapper">
+			<div class="text1">
+				{{njl.title}} </div>
+		    {% autoescape off %}
+			{{njl.content |truncatewords_html:"10" }}
+			{% endautoescape %}
+<a href="/nongjiale_detial/{{njl.id}}" class="btn">详情</a>
+<div class="clear "></div>
+			</div>
+		{% endfor %}
 </div>
-
+</div>
 
 <script type="text/javascript">
 window.onload = function() {
