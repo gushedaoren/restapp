@@ -61,7 +61,7 @@ class AD(Article):
 	img3 = ImageField(blank=True)
 	img4 = ImageField(blank=True)
 	img5 = ImageField(blank=True)
-	link = models.CharField(max_length=150)
+	link = models.CharField(max_length=150 , blank=True)
 
 	def __unicode__(self):
 		return self.title
