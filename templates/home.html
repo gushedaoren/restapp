@@ -147,6 +147,7 @@
 				<div class="clear"></div>
 				</div>
 <div class="grid_8">
+	<h3>崇明农家乐</h3>
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">推荐</a></li>
@@ -198,25 +199,16 @@
 	</div>
 </div>
 </div>
-	
+	<h3>崇明新闻</h3>
 	<div class="grid_4">
-	 <div class="newsletter_title">NewsLetter </div>
+	 <div class="newsletter_title">最新</div>
 	 <div class="n_container">
-			 <form id="newsletter">
-									<div class="success">Your subscribe request has been sent!</div>
-									<div class="text1">Sign up to receive our newsletters </div>
-									<label class="email">
-											 <input type="email" value="email address" >
-												<span class="error">*This is not a valid email address.</span>
-									</label> 
-									<div class="clear"></div> <a href="#" class="" data-type="submit"></a> 
-							</form> 
-							<ul class="list">
+			<ul class="list">
 								{% for article in news %}
 								<li><a href="/news_detial/{{article.id}}">{{ article.title }} </a></li>
 								{% endfor %}
 
-							</ul>
+			</ul>
 			</div>
 	</div>
 	<div class="clear"></div></div>
