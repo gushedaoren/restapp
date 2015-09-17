@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block base_head %}
+<script src="/static/js/tms-0.4.1.js"></script>
 <script>
 	        $(window).load(function(){
 			$('.slider')._TMS({
@@ -169,13 +170,17 @@ window.onload = function(){
   var nav = document.getElementById('home');
 
   nav.className = 'current';
+
+  $(".pic").click(function(){
+		location.href="http://www.baidu.com"
+		alert(this)
+
+	});
 };
 
  </script>
 	<script type="text/javascript" >
-function openUrl() {
-    windows.location.href="http://www.baidu.com"
-}
+
 
  </script>
 	</div>
