@@ -45,7 +45,7 @@ urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += patterns("",
 
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': True}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/restapp_media", 'show_indexes': False}),
    # (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
     (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/css'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/js'}),
