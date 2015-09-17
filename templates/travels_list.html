@@ -15,7 +15,7 @@
 			<div class="text1">
 				<a href="/travel_detial/{{article.id}}">{{article.title}}</a> </div>
 		    {% autoescape off %}
-			{{article.content |truncatewords_html:"10" }}
+			{{article.summary  }}
 			{% endautoescape %}
 <a href="/travel_detial/{{article.id}}" class="btn">详情</a>
 

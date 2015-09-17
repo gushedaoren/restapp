@@ -25,8 +25,10 @@ class News(Article):
 		verbose_name_plural = "新闻"
 
 class Youji(Article):
+	summary = models.TextField(max_length=150)
+	hot = models.IntegerField(default=0)
 	author = models.CharField(max_length=150)
-	icon_url=models.CharField(max_length=1000, blank=True)
+	icon_url = models.CharField(max_length=1000, blank=True)
 	def __unicode__(self):
 		return self.title
 	class Meta:
@@ -36,11 +38,15 @@ class Youji(Article):
 
 
 class Nongjiale(Article):
+	summary = models.TextField(max_length=150)
 	contact = models.CharField(max_length=150)
 	phone = models.CharField(max_length=150)
 	address = models.CharField(max_length=250)
 	busRoutes = models.TextField(blank=True)
 	carRoutes = models.TextField(blank=True)
+
+	hot = models.IntegerField(default=0)
+	rank = models.IntegerField(default=0)
 	logo = ImageField(blank=True)
 	img1 = ImageField(blank=True)
 	img2 = ImageField(blank=True)
