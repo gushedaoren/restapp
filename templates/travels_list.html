@@ -10,8 +10,9 @@
 
 
 {% for article in object_list %}
-    <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
+
 <div class="extra_wrapper">
+    <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="100" width="100" />
 			<div class="text1">
 				<a href="/travel_detial/{{article.id}}">{{article.title}}</a> </div>
 		    {% autoescape off %}
