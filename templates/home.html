@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 
 {% block base_head %}
+<script>
+	        $(window).load(function(){
+			$('.slider')._TMS({
+							show:0,
+							pauseOnHover:false,
+							prevBu:'.prev',
+							nextBu:'.next',
+							playBu:false,
+							duration:800,
+							preset:'random',
+							pagination:false,//'.pagination',true,'&lt;ul>&lt;/ul>'
+							pagNums:false,
+							slideshow:8000,
+							numStatus:false,
+							banners:true,
+					waitBannerAnimation:false,
+				progressBar:false
+			})	;
+			 $( "#tabs" ).tabs();
 
+		$().UItoTop({ easingType: 'easeOutQuart' });
+			});
 
+		 </script>
 {% endblock %}
 {% block base_frame %}
 <body	class="page1">

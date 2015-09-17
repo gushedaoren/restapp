@@ -33,16 +33,16 @@ window.$ = jQuery.noConflict();
 <div class="main_body_detial">
 <div>
 {% if  njl.img1  %}
-<div style="max-width:800px;margin:50px auto;">
+<div style="max-width:800px;max-height:600px;margin:50px auto;">
 <div class="ms-showcase2-template ms-dir-v">
 
-  <div class="master-slider ms-skin-default" id="masterslider">
-<div class="ms-slide"> <img src="masterslider/loading-2.gif" data-src="/static/xiangce/images/big/1.jpg" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/static/xiangce/images/1.jpg" alt="thumb" /> </div>
+  <div class ="master-slider ms-skin-default" id="masterslider">
+
     {% for img in imgs %}
       {% if  img  %}
-    <div class="ms-slide"> <img src="/static/xiangce/masterslider/loading-2.gif" data-src="/media/{{img}}" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /> </div>
+    <div class="ms-slide"><img src="/static/xiangce/masterslider/loading-2.gif" data-src="/media/{{img}}" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /></div>
       {% endif %}
-      {% endfor %}>
+      {% endfor %}
 
   </div>
   </div>
