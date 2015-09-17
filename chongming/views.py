@@ -118,9 +118,23 @@ def nongjiale_list(request):
 def nongjiale_detial(request,pk):
     njl = get_object_or_404(Nongjiale, pk=pk)
     template = get_template('nongjiale_detial.html')
-    variables = Context({
 
-    'njl': njl
+    imgs = []
+
+    imgs.append(njl.img1)
+
+    imgs.append(njl.img2)
+
+    imgs.append(njl.img3)
+
+    imgs.append(njl.img4)
+
+    imgs.append(njl.img5)
+
+    variables = Context({
+       'imgs': imgs,
+       'njl': njl,
+
     })
     output = template.render(variables)
     return HttpResponse(output)

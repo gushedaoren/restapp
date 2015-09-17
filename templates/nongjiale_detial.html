@@ -1,79 +1,62 @@
 {% extends "base.html" %}
 
 {% block base_head %}
-
+<link rel='stylesheet' href='/static/xiangce/css/masterslider.css' type='text/css' media='all' />
+<link rel='stylesheet' href='/static/xiangce/css/ms-showcase2.css' type='text/css' media='all' />
+<link rel='stylesheet' href='/static/xiangce/css/masterslider.main.css' type='text/css' media='all' />
+<script src="/static/xiangce/js/modernizr-2.6.2.min.js"></script>
+<script type='text/javascript' src='/static/xiangce/js/jquery.js'></script>
+<script type='text/javascript' src='/static/xiangce/js/masterslider.min.js'></script>
+<script type='text/javascript' src='/static/xiangce/js/jquery.easing.min.js'></script>
+<script>
+var ms_grabbing_curosr='/static/xiangce/images/grabbing.png',ms_grab_curosr='/static/xiangce/images/grab.png';
+window.$ = jQuery.noConflict();
+</script>
 {% endblock %}
 
 {% block base_frame %}
+<script type="text/javascript">
+	$(document).ready(function(){
+		var slider = new MasterSlider();
+		slider.setup('masterslider' , {
+			width:610,
+			height:630,
+			space:5,
+			view:'basic'
+		});
+		slider.control('arrows');
+		slider.control('scrollbar' , {dir:'h'});
+		slider.control('thumblist' , {autohide:false ,dir:'v',arrows:false});
+	});
+</script>
 
 <div class="main_body_detial">
+<div>
+{% if  njl.img1  %}
+<div style="max-width:800px;margin:50px auto;">
+<div class="ms-showcase2-template ms-dir-v">
 
-<div >
+  <div class="master-slider ms-skin-default" id="masterslider">
+<div class="ms-slide"> <img src="masterslider/loading-2.gif" data-src="/static/xiangce/images/big/1.jpg" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/static/xiangce/images/1.jpg" alt="thumb" /> </div>
+    {% for img in imgs %}
+      {% if  img  %}
+    <div class="ms-slide"> <img src="/static/xiangce/masterslider/loading-2.gif" data-src="/media/{{img}}" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /> </div>
+      {% endif %}
+      {% endfor %}>
+
+  </div>
+  </div>
+
+</div>
+    {% endif %}
+<div id="word_content">
 {% if njl %}
 <p>
 
-
 <H3>{{ njl.title }}</H3>
-    
-
 
 </p>
-<div class="zp">
-
-        <table>
-
-            <tr>
-                {% if njl.img1 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{njl.img1}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-                {% if njl.img2 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{njl.img2}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-
-
-                {% if njl.img3 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{njl.img3}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-
-                {% if njl.img4 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{njl.img4}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-
-                {% if njl.img5 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{njl.img5}}" />
-                    </div>
-                </td>
-                {% endif %}
-            </tr>
-        </table>
-        <div class="bigpic" style="display: none;">
-            <img class="bigimg" src="" />
-        </div>
-    </div>
-
-
+</div>
 
 <div>
  <p>
@@ -97,7 +80,7 @@
      <p>
         联系电话：{{njl.phone}}
     </p>
-</div>
+
 {% else %}
 <p>No news found.</p>
 {% endif %}
@@ -108,10 +91,13 @@
     <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
 </div>
 
+
 </div>
+
 <script type="text/javascript">
 window.onload = function() {
   document.getElementById('nongjiale_list').className = 'current';
 };
    </script>
+
 {% endblock %}
