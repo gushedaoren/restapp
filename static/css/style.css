@@ -13,7 +13,7 @@ input {
 
 
 html {
-	width: 100%;
+    min-width: 1152px;;
 }
 
  a[href^="tel:"] {
@@ -1005,7 +1005,8 @@ footer {
 	display: block;
 	padding: 25px 0;
 	color: #6b6868;
-	width:100%;
+	min-width: 1152px;
+
 }
 
 .socials  {
