@@ -28,17 +28,30 @@
 }
 
 .main_body {
-	background: #fff;
-	width: 100%;
-	margin: 0px auto;
-	padding:10px 15px;
+
+	pading-top:5px;
+	margin-bottom:5px;
+	margin-left:50px;
+	margin-right:50px;
+	overflow:auto;
+
 }
 
 .main_body_detial {
-	background: #fff;
+
+	pading-top:5px;
+	margin-bottom:5px;
+	margin-left:50px;
+	margin-right:50px;
+	overflow:auto;
+
+}
+
+.base_content {
+    background: #fff;
 	width: 100%;
-	margin: 0px auto;
-	padding:10px 45px;
+
+
 }
 
 .bottom_block img {
