@@ -74,7 +74,7 @@
 
 
 							{% autoescape off %}
-							{{article.summary |slice:"50"}}
+							{{article.summary |slice:"60"}}
 					        	{% endautoescape %}
 
 
@@ -173,10 +173,18 @@ window.onload = function(){
 
   $(".pic").click(function(){
 
-  		var bg=this.style.background;
+  		var bg=this.style.background.toString();
   		var url;
 		{% for ad in ads %}
-		}
+		    var logo={{ad.logo.url}}
+		    logo=logo.toString();
+
+			if(bg.indexOf(logo)>0){
+			  url='http://www.baidu.com'
+			}else{
+			 url='http://www.jd.com'
+			}
+
 		{% endfor %}
 		window.location.href=url;
 
