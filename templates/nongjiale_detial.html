@@ -93,13 +93,17 @@ var jiathis_config = {data_track_clickback:'true'};
     <p>
         地址：{{njl.address}}
     </p>
+    {% if  njl.busRoutes  %}
     <p>
         公交线路：{{njl.busRoutes}}
     </p>
+     {% endif %}
+    
+     {% if  njl.carRoutes  %}
     <p>
         自驾线路：{{njl.carRoutes}}
     </p>
-
+    {% endif %}
     <p>
         联系人：{{njl.contact}}
     </p>
