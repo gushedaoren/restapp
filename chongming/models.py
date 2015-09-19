@@ -45,8 +45,8 @@ class Nongjiale(Article):
 	busRoutes = models.TextField(blank=True)
 	carRoutes = models.TextField(blank=True)
 
-	hot = models.IntegerField(default=0)
-	rank = models.IntegerField(default=0)
+	hot = models.IntegerField(default=0,verbose_name="热门")
+	rank = models.IntegerField(default=0,verbose_name="推荐")
 	logo = ImageField(blank=True)
 	img1 = ImageField(blank=True)
 	img2 = ImageField(blank=True)

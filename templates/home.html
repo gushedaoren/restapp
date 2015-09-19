@@ -103,7 +103,7 @@
 	</ul>
 <div class="clear"></div>
 <div class="tab_cont" id="tabs-1" >
-		{% for njl in nongjiales %}
+		{% for njl in nongjiales_rank %}
 			<img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url}}" width="100" height="100">
 		<div class="extra_wrapper">
 			<div class="text1">
@@ -117,7 +117,7 @@
 		{% endfor %}
 </div>
 <div class="tab_cont" id="tabs-2" >
-		{% for njl in nongjiales %}
+		{% for njl in nongjiales_newest %}
 			<img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url}}" width="100" height="100">
 		<div class="extra_wrapper">
 			<div class="text1">
@@ -132,7 +132,7 @@
 	</div>
 <div class="tab_cont" id="tabs-3" >
  
-		{% for njl in nongjiales %}
+		{% for njl in nongjiales_hot %}
 			<img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url}}" width="100" height="100">
 		<div class="extra_wrapper">
 			<div class="text1">

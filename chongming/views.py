@@ -13,14 +13,18 @@ def index(request):
     news= News.objects.all().order_by("-newsTime")[:10]
     youjis= Youji.objects.all().order_by("-created")[:3]
 
-    nongjiales=Nongjiale.objects.all().order_by("-created")[:3]
+    nongjiales_newest=Nongjiale.objects.all().order_by("-created")[:3]
+    nongjiales_hot=Nongjiale.objects.all().order_by("-hot")[:3]
+    nongjiales_rank=Nongjiale.objects.all().order_by("-rank")[:3]
     ads=AD.objects.all().order_by("created")[:3]
     variables = Context({
 
         'news': news,
         'youjis': youjis,
         'ads': ads,
-        "nongjiales": nongjiales
+        "nongjiales_newest": nongjiales_newest,
+        'nongjiales_hot': nongjiales_hot,
+        'nongjiales_rank': nongjiales_rank,
     })
 
     output = template.render(variables)
