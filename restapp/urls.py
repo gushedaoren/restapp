@@ -50,6 +50,6 @@ urlpatterns += patterns("",
     (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/css'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/js'}),
     (r'^images/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/images'}),
-    (r'^comments/', include('django_comments.urls')),
+
 
 )
