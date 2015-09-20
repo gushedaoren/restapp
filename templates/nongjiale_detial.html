@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load comments %}
 {% block base_head %}
   <SCRIPT type=text/javascript>
      window.document.title="{{njl.title}}";
@@ -34,7 +34,6 @@ window.$ = jQuery.noConflict();
 </script>
 
 <div class="main_body_detial">
-<div>
 {% if  njl.img1  %}
 <div style="max-width:800px;max-height:600px;margin:50px auto;">
 <div class="ms-showcase2-template ms-dir-v">
@@ -116,6 +115,9 @@ var jiathis_config = {data_track_clickback:'true'};
 {% endif %}
 </div>
 
+ {% include "nongjiale/_comments.html" %}
+
+
 <div>
     <p>更多详情:</p>
     <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
@@ -124,10 +126,11 @@ var jiathis_config = {data_track_clickback:'true'};
 
 </div>
 
+
 <script type="text/javascript">
 window.onload = function() {
   document.getElementById('nongjiale_list').className = 'current';
 };
    </script>
-
+</div>
 {% endblock %}
