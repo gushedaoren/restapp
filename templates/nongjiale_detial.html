@@ -115,6 +115,13 @@ var jiathis_config = {data_track_clickback:'true'};
 {% endif %}
 </div>
 
+ {% if  njl.njlShow  %}
+     {% autoescape off %}
+    {{njl.njlShow}}
+     {% endautoescape %}
+    {% endif %}
+
+
  {% include "nongjiale/_comments.html" %}
 
 

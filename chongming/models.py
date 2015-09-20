@@ -54,6 +54,7 @@ class Nongjiale(Article):
 	img4 = ImageField(blank=True)
 	img5 = ImageField(blank=True)
 	enable_comments = models.BooleanField(default=True)
+	njlShow = models.CharField(max_length=1000,blank=True)
 	def __unicode__(self):
 		return self.title
 	class Meta:
@@ -61,6 +62,7 @@ class Nongjiale(Article):
 		verbose_name_plural = "农家乐"
 
 class AD(Article):
+	index = models.IntegerField(default=0)
 	logo = ImageField(blank=True)
 	img1 = ImageField(blank=True)
 	img2 = ImageField(blank=True)
