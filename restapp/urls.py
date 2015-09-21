@@ -17,9 +17,24 @@ import os
 from django.conf.urls import include, url,patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from chongming import views
+from chongming.models import News
 from restapp import settings
+from django.contrib.sitemaps import views as sitemaps_views, GenericSitemap
+from django.views.decorators.cache import cache_page
+
+news_dict = {
+    'queryset': News.objects.all(),
+    'pub_time': 'pub_time',
+}
+
+sitemaps = {
+    'news': GenericSitemap(news_dict, priority=0.6),
+}
 
 urlpatterns =patterns('',
                url(r'^admin/', include(admin.site.urls)),
@@ -37,6 +52,8 @@ urlpatterns =patterns('',
                 url(r'^nongjiale_detial/(.+)/$', views.nongjiale_detial),
                 url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
                 url(r'^ad_detial/(.+)/$', views.ad_detial),
+                url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+
 
 
                       )
@@ -53,3 +70,4 @@ urlpatterns += patterns("",
 
 
 )
+

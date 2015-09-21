@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf.global_settings import TEMPLATE_LOADERS
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -45,6 +46,8 @@ INSTALLED_APPS = (
     'chongming',
     'mce_filebrowser',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django.contrib.gis',
   
 
 
@@ -86,6 +89,11 @@ TEMPLATES = [
 
 ]
 
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+ )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     # 'django.core.context_processors.auth',

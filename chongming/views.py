@@ -1,3 +1,7 @@
+from requests import request
+from django.contrib import sitemaps
+from django.contrib.gis.sitemaps import views
+from django.contrib.sitemaps.views import sitemap
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, render_to_response

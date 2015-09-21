@@ -1,7 +1,10 @@
 # coding=utf-8
+from django.core.urlresolvers import reverse
+
 from django.db import models
 from django.contrib import admin
 from django.db.models import ImageField
+
 from tinymce.models import HTMLField
 # Create your models here.
 class Article(models.Model):
@@ -20,9 +23,14 @@ class News(Article):
 	newsTime=models.DateTimeField()
 	def __unicode__(self):
 		return self.title
+
+
 	class Meta:
 		verbose_name = "新闻"
 		verbose_name_plural = "新闻"
+
+
+
 
 class Youji(Article):
 	summary = models.TextField(max_length=150)
