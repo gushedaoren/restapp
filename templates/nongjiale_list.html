@@ -4,11 +4,11 @@
 {% load static %}
 <div class="main_body">
 <div class="list_item"  >
-    {% load watermark %}
+
 {% for njl in object_list %}
 
 		<div class="extra_wrapper">
-            <img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url|watermark:'The Watermark,position=43%x80%,opacity=40' }}" width="100" height="100">
+            <img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url }}" width="100" height="100">
 			<div class="text1">
 			<a href="/nongjiale_detial/{{njl.id}}" >	{{njl.title}}</a> </div>
 		    {% autoescape off %}

@@ -47,7 +47,7 @@ INSTALLED_APPS = (
     'mce_filebrowser',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'watermarker',
+
 
   
 
