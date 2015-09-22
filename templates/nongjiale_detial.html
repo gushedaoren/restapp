@@ -39,10 +39,10 @@ window.$ = jQuery.noConflict();
 <div class="ms-showcase2-template ms-dir-v">
 
   <div class ="master-slider ms-skin-default" id="masterslider">
-
+      {% load watermark %}
     {% for img in imgs %}
       {% if  img  %}
-    <div class="ms-slide"><img src="/static/xiangce/masterslider/loading-2.gif" data-src="/media/{{img}}" alt="lorem ipsum dolor sit"/> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /></div>
+    <div class="ms-slide"><img src="/static/xiangce/masterslider/loading-2.gif" data-src="{{img.url|watermark:'The Watermark,position=43%x80%,opacity=40' }}" alt="lorem ipsum dolor sit" /> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /></div>
       {% endif %}
       {% endfor %}
 
