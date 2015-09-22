@@ -52,7 +52,7 @@ urlpatterns =patterns('',
                 url(r'^nongjiale_detial/(.+)/$', views.nongjiale_detial),
                 url(r'^mce_filebrowser/', include('mce_filebrowser.urls')),
                 url(r'^ad_detial/(.+)/$', views.ad_detial),
-                url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+
 
 
 
