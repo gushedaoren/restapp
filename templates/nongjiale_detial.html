@@ -17,7 +17,6 @@ window.$ = jQuery.noConflict();
 </script>
 
 
-<script src="/static/js/watermark.jquery.js"></script>
 
 
 {% endblock %}
@@ -49,7 +48,7 @@ window.$ = jQuery.noConflict();
 
     {% for img in imgs %}
       {% if  img  %}
-    <div class="ms-slide"><img src="/static/xiangce/masterslider/loading-2.gif" data-src="{{img.url }}" alt="lorem ipsum dolor sit" /> <img class="ms-thumb" src="/media/{{img}}" alt="thumb" /></div>
+    <div class="ms-slide"><img src="/static/xiangce/masterslider/loading-2.gif" data-src="{{img.url }}" alt="{{njl.title}}"  class="watermark"/> <img class="ms-thumb" src="/media/{{img}}" alt="{{njl.title}}"  class="watermark" /></div>
       {% endif %}
       {% endfor %}
 
@@ -134,8 +133,9 @@ var jiathis_config = {data_track_clickback:'true'};
 
 <div>
     <p>更多详情:</p>
-    <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
+    <img src="/static/images/qrcode_weixin.jpg" width="150" height="150"  >
 </div>
+
 
 </div>
 
