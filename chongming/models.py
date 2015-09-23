@@ -85,7 +85,24 @@ class AD(Article):
 		verbose_name = "广告"
 		verbose_name_plural = "广告"
 
+class Shanghu(models.Model):
+	title = models.CharField(max_length=150)
+	contact = models.CharField(max_length=150)
+	phone = models.CharField(max_length=150)
+	address = models.CharField(max_length=250, blank=True)
+	remark = HTMLField(blank=True)
+	status=models.IntegerField(default=0)
+	def __unicode__(self):
+		return self.title
+	class Meta:
+		verbose_name = "商户通讯录"
+		verbose_name_plural = "商户通讯录"
+
+class ShanghuAdmin(admin.ModelAdmin):
+    list_display = ('title','contact','phone')
+
 admin.site.register(News)
 admin.site.register(Youji)
 admin.site.register(Nongjiale)
 admin.site.register(AD)
+admin.site.register(Shanghu,ShanghuAdmin)
