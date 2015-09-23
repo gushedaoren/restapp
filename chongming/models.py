@@ -86,7 +86,7 @@ class AD(Article):
 		verbose_name_plural = "广告"
 
 class Shanghu(models.Model):
-	title = models.CharField(max_length=150)
+	title = models.CharField(max_length=150, unique=True)
 	contact = models.CharField(max_length=150, blank=True)
 	phone = models.CharField(max_length=150)
 	address = models.CharField(max_length=250, blank=True)
@@ -99,7 +99,7 @@ class Shanghu(models.Model):
 		verbose_name_plural = "商户通讯录"
 
 class ShanghuAdmin(admin.ModelAdmin):
-    list_display = ('title','contact','phone')
+    list_display = ('title','address','phone')
 
 admin.site.register(News)
 admin.site.register(Youji)
