@@ -87,7 +87,7 @@ class AD(Article):
 
 class Shanghu(models.Model):
 	title = models.CharField(max_length=150)
-	contact = models.CharField(max_length=150)
+	contact = models.CharField(max_length=150, blank=True)
 	phone = models.CharField(max_length=150)
 	address = models.CharField(max_length=250, blank=True)
 	remark = HTMLField(blank=True)
