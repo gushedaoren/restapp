@@ -71,3 +71,18 @@ urlpatterns += patterns("",
 
 )
 
+news_dict = {
+    'queryset': News.objects.all(),
+    'date_field': 'modified_date',
+}
+
+sitemaps = {
+# 'flatpages': FlatPageSitemap,
+
+'news': GenericSitemap(news_dict, priority=0.5),
+}
+
+urlpatterns += patterns('django.contrib.sitemaps.views', 
+    (r'^sitemap\.xml$', 'index', {'sitemaps': sitemaps}),
+    (r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
+)
