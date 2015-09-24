@@ -24,10 +24,17 @@ class News(Article):
 	def __unicode__(self):
 		return self.title
 
+	def get_absolute_url(self):
+    		 return reverse('chongming.views.news_detial', args=[str(self.id)])
+
 
 	class Meta:
 		verbose_name = "新闻"
 		verbose_name_plural = "新闻"
+
+
+
+
 
 
 
@@ -38,7 +45,9 @@ class Youji(Article):
 	author = models.CharField(max_length=150)
 	icon_url = models.CharField(max_length=1000, blank=True)
 	def __unicode__(self):
-		return self.title
+			return self.title
+	def get_absolute_url(self):
+    		 return reverse('chongming.views.travel_detial', args=[str(self.id)])
 	class Meta:
 		verbose_name = "游记"
 		verbose_name_plural = "游记"
@@ -63,8 +72,14 @@ class Nongjiale(Article):
 	img5 = ImageField(blank=True)
 	enable_comments = models.BooleanField(default=True)
 	njlShow = models.CharField(max_length=1000,blank=True)
+
+
 	def __unicode__(self):
-		return self.title
+			return self.title
+
+
+	def get_absolute_url(self):
+    		 return reverse('chongming.views.nongjiale_detial', args=[str(self.id)])
 	class Meta:
 		verbose_name = "农家乐"
 		verbose_name_plural = "农家乐"

@@ -22,7 +22,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from chongming import views
-from chongming.models import News
+from chongming.models import News, Nongjiale, Youji
 from restapp import settings
 from django.contrib.sitemaps import views as sitemaps_views, GenericSitemap
 from django.views.decorators.cache import cache_page
@@ -73,13 +73,25 @@ urlpatterns += patterns("",
 
 news_dict = {
     'queryset': News.objects.all(),
-    'date_field': 'modified_date',
+
+}
+
+njl_dict = {
+    'queryset': Nongjiale.objects.all(),
+
+}
+
+youji_dict = {
+    'queryset': Youji.objects.all(),
+
 }
 
 sitemaps = {
 # 'flatpages': FlatPageSitemap,
 
-'news': GenericSitemap(news_dict, priority=0.5),
+    'news': GenericSitemap(news_dict, priority=0.7),
+    'njl': GenericSitemap(njl_dict, priority=0.6),
+    'youji': GenericSitemap(youji_dict, priority=0.5),
 }
 
 urlpatterns += patterns('django.contrib.sitemaps.views', 
