@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block base_frame %}
+
+{% load static %}
+<div class="main_body">
+
+
+ <div class="gallery">
+
+
+
+{% for article in object_list %}
+     	<a href="/food_detial/{{article.id}}">
+<div class="grid_4">
+
+    <img onerror="this.src='/static/images/icon.jpg'" src="{{article.icon_url}}" height="300" width="400" />
+			<div class="text1">
+			{{article.title}}</div>
+
+
+
+</div>
+            </a>
+
+{% endfor %}
+
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">上一页</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>
+
+
+</div>
+
+<script type="text/javascript">
+window.onload = function() {
+  document.getElementById('food_list').className = 'current';
+};
+   </script>
+
+{% endblock %}

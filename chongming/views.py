@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 # Create your views here.
 from django.template import Context, RequestContext
 from django.template.loader import get_template
-from chongming.models import News, Youji, Nongjiale, AD
+from chongming.models import News, Youji, Nongjiale, AD, Food
 
 
 def index(request):
@@ -150,6 +150,38 @@ def ad_detial(request,pk):
     variables = Context({
 
         'ad': ad
+    })
+    output = template.render(variables)
+    return HttpResponse(output)
+
+
+def food_list(request):
+
+
+
+    foods=Food.objects.all().order_by("-created")
+    paginator = Paginator(foods, 10) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        object_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        object_list = paginator.page(paginator.num_pages)
+
+    return render_to_response('food_list.html', {'object_list': object_list})
+
+
+
+def food_detial(request,pk):
+    obj = get_object_or_404(Food, pk=pk)
+    template = get_template('food_detial.html')
+    variables = Context({
+
+        'obj': obj
     })
     output = template.render(variables)
     return HttpResponse(output)

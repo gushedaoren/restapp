@@ -116,8 +116,22 @@ class Shanghu(models.Model):
 class ShanghuAdmin(admin.ModelAdmin):
     list_display = ('title','address','phone')
 
+class Food(Article):
+	summary = models.TextField(max_length=150)
+
+	author = models.CharField(max_length=150)
+	icon_url = models.CharField(max_length=1000, blank=True)
+	def __unicode__(self):
+			return self.title
+	def get_absolute_url(self):
+    		 return reverse('chongming.views.travel_detial', args=[str(self.id)])
+	class Meta:
+		verbose_name = "崇明美食"
+		verbose_name_plural = "崇明美食"
+
 admin.site.register(News)
 admin.site.register(Youji)
 admin.site.register(Nongjiale)
 admin.site.register(AD)
 admin.site.register(Shanghu,ShanghuAdmin)
+admin.site.register(Food)
