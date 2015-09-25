@@ -39,6 +39,7 @@
 
 .main_body_detial {
 
+
 	pading-top:5px;
 	margin-bottom:5px;
 	margin-left:50px;
@@ -53,12 +54,7 @@
 
 
 }
-.content {
-    background: #fff;
-	width: 100%;
 
-
-}
 .bottom_block img {
 	padding-top: 22px;
 }
@@ -69,4 +65,11 @@
 	width :40%;
 	margin-left: auto;
 	margin-right: auto
+}
+
+
+.home_content_youji {
+
+	background: url(../images/bg_body.jpg) center 0 no-repeat #d6bba0;
+
 }
