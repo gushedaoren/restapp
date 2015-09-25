@@ -53,7 +53,12 @@
 
 
 }
+.content {
+    background: #fff;
+	width: 100%;
 
+
+}
 .bottom_block img {
 	padding-top: 22px;
 }
