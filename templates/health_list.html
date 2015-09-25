@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block base_frame %}
+
+<div class="main_body">
+<div class="clear " ></div>
+<div class="n_container">
+			<ul class="list">
+
+
+
+
+								{% for article in object_list %}
+								<li><a href="/health_detial/{{article.id}}">{{ article.title }} </a> &nbsp;&nbsp;&nbsp;{{article.newsTime}}
+                                 </li>
+
+								{% endfor %}
+
+
+
+
+			</ul>
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">上一页</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>
+			</div>
+</div>
+</div>
+
+
+<script type="text/javascript" >
+window.onload = function(){
+  var nav = document.getElementById('health_list');
+
+  nav.className = 'current';
+};
+
+  </script>
+
+
+{% endblock %}

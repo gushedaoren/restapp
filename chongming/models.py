@@ -126,8 +126,21 @@ class Food(Article):
 	def get_absolute_url(self):
     		 return reverse('chongming.views.travel_detial', args=[str(self.id)])
 	class Meta:
-		verbose_name = "崇明美食"
-		verbose_name_plural = "崇明美食"
+		verbose_name = "美食"
+		verbose_name_plural = "美食"
+
+class Health(Article):
+	summary = models.TextField(max_length=150)
+
+	author = models.CharField(max_length=150)
+	icon_url = models.CharField(max_length=1000, blank=True)
+	def __unicode__(self):
+			return self.title
+	def get_absolute_url(self):
+    		 return reverse('chongming.views.health_detial', args=[str(self.id)])
+	class Meta:
+		verbose_name = "健康"
+		verbose_name_plural = "健康"
 
 admin.site.register(News)
 admin.site.register(Youji)
@@ -135,3 +148,4 @@ admin.site.register(Nongjiale)
 admin.site.register(AD)
 admin.site.register(Shanghu,ShanghuAdmin)
 admin.site.register(Food)
+admin.site.register(Health)
