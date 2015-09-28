@@ -120,7 +120,9 @@ class Food(Article):
 	summary = models.TextField(max_length=150)
 
 	author = models.CharField(max_length=150)
+
 	icon_url = models.CharField(max_length=1000, blank=True)
+
 	def __unicode__(self):
 			return self.title
 	def get_absolute_url(self):
@@ -133,7 +135,9 @@ class Health(Article):
 	summary = models.TextField(max_length=150)
 
 	author = models.CharField(max_length=150)
+	source=models.CharField(max_length=150)
 	icon_url = models.CharField(max_length=1000, blank=True)
+
 	def __unicode__(self):
 			return self.title
 	def get_absolute_url(self):

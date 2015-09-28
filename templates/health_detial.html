@@ -11,10 +11,14 @@
 <p>
 
 <H3>{{ obj.title }}</H3>
-    
+
 {{ obj.created }}
 
 </p>
+    <p>
+
+            来源：{{ obj.source }}
+    </p>
 <p>
     {% autoescape off %}
     {{obj.content}}
