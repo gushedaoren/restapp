@@ -10,6 +10,8 @@
 		<div class="extra_wrapper">
             {% if njl.logo %}
 			<img onerror="this.src='/static/images/icon.jpg'" src="{{njl.logo.url}}" width="100" height="100">
+            {% else %}
+            <img src="/static/images/icon.jpg" width="100" height="100">
 	        {% endif %}
 			<div class="text1">
 			<a href="/nongjiale_detial/{{njl.id}}" >	{{njl.title}}</a> </div>
