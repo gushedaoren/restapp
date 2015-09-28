@@ -208,7 +208,7 @@ def health_list(request):
 
 
 def health_detial(request,pk):
-    obj = get_object_or_404(Food, pk=pk)
+    obj = get_object_or_404(Health, pk=pk)
     template = get_template('health_detial.html')
     variables = Context({
 
