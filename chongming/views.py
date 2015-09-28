@@ -191,7 +191,7 @@ def health_list(request):
 
 
     objs=Health.objects.all().order_by("-created")
-    paginator = Paginator(objs, 10) # Show 25 contacts per page
+    paginator = Paginator(objs, 20) # Show 25 contacts per page
 
     page = request.GET.get('page')
     try:
