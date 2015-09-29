@@ -6,14 +6,21 @@
 <div class="main_body">
 <div class="clear " ></div>
 <div class="n_container">
-			<ul class="list">
+			<ul class="news_list">
 
 
 
 
 								{% for article in object_list %}
-								<li><a href="/news_detial/{{article.id}}">{{ article.title }} </a> &nbsp;&nbsp;&nbsp;{{article.newsTime}}
+
+								<li class="news_list_item">
+                                    <div>       <a href="/news_detial/{{article.id}}">{{ article.title }}</a> </div>
+                                    <div>{{ article.summary }}</div>
+                                    <div class="news_item_bottom">{{article.newsSource}}&nbsp;&nbsp;{{article.newsTime}}</div>
+
+
                                  </li>
+                                         <div class="clear"></div>
 
 								{% endfor %}
 
