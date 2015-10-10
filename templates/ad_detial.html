@@ -20,60 +20,9 @@
 
 
 </p>
-<div class="zp">
-
-        <table>
-
-            <tr>
-                {% if ad.img1 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{ad.img1}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-                {% if ad.img2 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{ad.img2}}" />
-                    </div>
-                </td>
-                {% endif %}
 
 
 
-                {% if ad.img3 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{ad.img3}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-
-                {% if ad.img4 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{ad.img4}}" />
-                    </div>
-                </td>
-                {% endif %}
-
-
-                {% if ad.img5 %}
-                <td>
-                    <div class="zppic">
-                        <img src="/media/{{ad.img5}}" />
-                    </div>
-                </td>
-                {% endif %}
-            </tr>
-        </table>
-        <div class="bigpic" style="display: none;">
-            <img class="bigimg" src="" />
-        </div>
-    </div>
 
 
 
@@ -88,7 +37,34 @@
 {% else %}
 
 {% endif %}
+
+
+ {% if  ad.img1  %}
+
+<div id="focus_Box">
+
+
+
+   <ul>
+    {% for img in imgs %}
+      {% if  img  %}
+
+         <li>
+			<img  class="watermark" alt="找农家乐，就上崇明慢生活！" src="{{img.url }}" />
+
+		</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+
+    {% endif %}
+
  {% include "_share.html" %}
+
+
+
 
 <div>
     <p>更多详情:</p>

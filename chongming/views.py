@@ -147,8 +147,19 @@ def nongjiale_detial(request,pk):
 def ad_detial(request,pk):
     ad = get_object_or_404(AD, pk=pk)
     template = get_template('ad_detial.html')
-    variables = Context({
+    imgs = []
 
+    imgs.append(ad.img1)
+
+    imgs.append(ad.img2)
+
+    imgs.append(ad.img3)
+
+    imgs.append(ad.img4)
+
+    imgs.append(ad.img5)
+    variables = Context({
+        'imgs': imgs,
         'ad': ad
     })
     output = template.render(variables)
