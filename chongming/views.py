@@ -104,7 +104,7 @@ def nongjiale_list(request):
 
 
 
-    nongjiales=Nongjiale.objects.all().order_by("-created")
+    nongjiales=Nongjiale.objects.all().order_by("-hot","-rank","-created")
     paginator = Paginator(nongjiales, 10) # Show 25 contacts per page
 
     page = request.GET.get('page')
