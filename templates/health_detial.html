@@ -20,6 +20,9 @@
             来源：{{ obj.source }}
     </p>
 <p>
+
+
+
     {% autoescape off %}
     {{obj.content}}
     {% endautoescape %}
@@ -27,9 +30,9 @@
 {% else %}
 <p>No obj found.</p>
 {% endif %}
-
-
  {% include "_share.html" %}
+
+
 <div>
     <p>更多详情:</p>
     <img src="/static/images/qrcode_weixin.jpg" width="150" height="150">
