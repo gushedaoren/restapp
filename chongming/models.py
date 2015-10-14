@@ -19,7 +19,7 @@ class Article(models.Model):
 
 class News(Article):
 	summary = models.TextField(max_length=150)
-	author = models.CharField(max_length=150)
+	author = models.CharField(max_length=150, default="佚名")
 	newsSource=models.CharField(max_length=150)
 	newsTime=models.DateTimeField()
 	icon_url = models.CharField(max_length=1000, blank=True)
@@ -44,7 +44,7 @@ class News(Article):
 class Youji(Article):
 	summary = models.TextField(max_length=150)
 	hot = models.IntegerField(default=0)
-	author = models.CharField(max_length=150)
+	author = models.CharField(max_length=150, default="佚名")
 	icon_url = models.CharField(max_length=1000, blank=True)
 	def __unicode__(self):
 			return self.title
@@ -121,7 +121,7 @@ class ShanghuAdmin(admin.ModelAdmin):
 class Food(Article):
 	summary = models.TextField(max_length=150)
 
-	author = models.CharField(max_length=150)
+	author = models.CharField(max_length=150, default="佚名")
 
 	icon_url = models.CharField(max_length=1000, blank=True)
 
@@ -136,7 +136,7 @@ class Food(Article):
 class Health(Article):
 	summary = models.TextField(max_length=150)
 
-	author = models.CharField(max_length=150)
+	author = models.CharField(max_length=150, default="佚名")
 	source=models.CharField(max_length=150)
 	icon_url = models.CharField(max_length=1000, blank=True)
 
